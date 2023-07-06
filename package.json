@@ -1,0 +1,17 @@
+{
+  "name": "game-guess-cards-pair",
+  "version": "1.0.0",
+  "description": "Карточная игра, целью которой является угадать все пары карт",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier —write ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "install": "^0.13.0",
+    "npm": "^9.8.0",
+    "prettier": "^3.0.0"
+  }
+}

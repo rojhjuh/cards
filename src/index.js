@@ -1,9 +1,9 @@
-"use strict";
+'use strict';
 
-import { renderStartPage } from "./components/start-page-component.js";
+import { renderStartPage } from './components/start-page-component.js';
 
-const gameElement = document.querySelector("#game");
-const GAME_PAGE = "game-page";
+const gameElement = document.querySelector('#game');
+const GAME_PAGE = 'game-page';
 
 let page = localStorage.getItem('page');
 let difficultyLevel = null;
@@ -25,16 +25,16 @@ const renderGame = () => {
 
     if (page === GAME_PAGE) {
         // Заглушка
-        const START_GAME = "Игра началась.";
+        const START_GAME = 'Игра началась.';
 
         let GAME_LEVEL;
 
-        if (difficultyLevel === "1") {
-            GAME_LEVEL = "Сложность: легкая.";
-        } else if (difficultyLevel === "2") {
-            GAME_LEVEL = "Сложность: средняя.";
-        } else if (difficultyLevel === "3") {
-            GAME_LEVEL = "Сложность: сложная.";
+        if (difficultyLevel === '1') {
+            GAME_LEVEL = 'Сложность: легкая.';
+        } else if (difficultyLevel === '2') {
+            GAME_LEVEL = 'Сложность: средняя.';
+        } else if (difficultyLevel === '3') {
+            GAME_LEVEL = 'Сложность: сложная.';
         }
 
         gameElement.innerHTML = `
