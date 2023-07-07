@@ -1,11 +1,11 @@
 'use strict';
 
+import { renderGamePage } from './components/game-page-component.js';
 import { renderStartPage } from './components/start-page-component.js';
 
 const gameElement = document.querySelector('#game');
-const GAME_PAGE = 'game-page';
 
-let page = localStorage.getItem('page');
+let page = window.localStorage.getItem('page');
 let difficultyLevel = null;
 
 const renderGame = () => {
@@ -13,8 +13,9 @@ const renderGame = () => {
         renderStartPage({
             gameElement,
             startClick: (newDifficultyLevel) => {
-                // Страницу пока не сохраняю в local storeage
-                page = GAME_PAGE;
+                window.localStorage.setItem('page', 'game-page');
+
+                page = 'game-page';
                 difficultyLevel = newDifficultyLevel;
 
                 renderGame();
@@ -23,22 +24,16 @@ const renderGame = () => {
         return;
     }
 
-    if (page === GAME_PAGE) {
-        // Заглушка
-        const START_GAME = 'Игра началась.';
-
-        let GAME_LEVEL;
-
+    if (page === 'game-page') {
         if (difficultyLevel === '1') {
-            GAME_LEVEL = 'Сложность: легкая.';
+            window.localStorage.setItem('guessed-cards', '6');
         } else if (difficultyLevel === '2') {
-            GAME_LEVEL = 'Сложность: средняя.';
+            window.localStorage.setItem('guessed-cards', '9');
         } else if (difficultyLevel === '3') {
-            GAME_LEVEL = 'Сложность: сложная.';
+            window.localStorage.setItem('guessed-cards', '18');
         }
 
-        gameElement.innerHTML = `
-            <h1>${START_GAME} ${GAME_LEVEL}</h1>`;
+        renderGamePage({ gameElement });
 
         return;
     }
