@@ -1,133 +1,150 @@
 .container {
-  max-width: 1024px;
-  margin: 0 auto;
+    max-width: 1024px;
+    margin: 0 auto;
 }
 
 .modal {
-  height: 774px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    height: 774px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .difficulty {
-  padding-top: 158px;
+    padding-top: 158px;
 }
+
 .difficulty__form {
-  width: 480px;
-  height: 459px;
-  padding-top: 52px;
-  border-radius: 12px;
-  background: #c2f5ff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 48px;
+    width: 480px;
+    height: 459px;
+    padding-top: 52px;
+    border-radius: 12px;
+    background: #c2f5ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
 }
+
 .difficulty .form__title {
-  width: 208px;
-  font-size: 40px;
-  font-style: normal;
-  line-height: 48px;
-  text-align: center;
-  color: #004980;
+    width: 208px;
+    font-size: 40px;
+    font-style: normal;
+    line-height: 48px;
+    text-align: center;
+    color: #004980;
 }
+
 .difficulty .form__levels {
-  margin-bottom: 19px;
-  display: flex;
-  gap: 26px;
+    margin-bottom: 19px;
+    display: flex;
+    gap: 26px;
 }
+
 .difficulty .form .level {
-  width: 98px;
-  height: 98px;
-  border-radius: 12px;
-  background: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 64px;
-  font-style: normal;
-  line-height: 72px;
-  color: var(--blue-100, #0080c1);
-  cursor: pointer;
+    width: 98px;
+    height: 98px;
+    border-radius: 12px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 64px;
+    font-style: normal;
+    line-height: 72px;
+    color: var(--blue-100, #0080c1);
+    cursor: pointer;
 }
+
 .difficulty .form .level--selected {
-  border: 3px solid #0080c1;
+    border: 3px solid #0080c1;
 }
 
 .game-page {
-  padding: 22px 22px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 35px;
+    padding: 22px 22px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
 }
+
 .game-page .header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
 .game-page .header__timer {
-  width: 155px;
-  height: 91px;
-  display: flex;
-  flex-direction: column;
+    width: 155px;
+    height: 91px;
+    display: flex;
+    flex-direction: column;
 }
+
 .game-page .header .timer__names {
-  margin-bottom: -10px;
-  display: flex;
-  justify-content: end;
-  gap: 57px;
+    margin-bottom: -10px;
+    display: flex;
+    justify-content: end;
+    gap: 57px;
 }
+
 .game-page .header .timer__name {
-  font-size: 16px;
-  line-height: 32px;
-  color: #fff;
-  text-align: right;
+    font-size: 16px;
+    line-height: 32px;
+    color: #fff;
+    text-align: right;
 }
+
 .game-page .header .timer__digits {
-  font-size: 64px;
-  line-height: 72px;
-  color: #fff;
+    font-size: 64px;
+    line-height: 72px;
+    color: #fff;
 }
+
 .game-page .cards {
-  display: grid;
-  grid-template-columns: repeat(9, 95px);
-  gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(9, 95px);
+    gap: 15px;
 }
+
 .game-page .card {
-  height: 133px;
-  padding-left: 6px;
-  padding-right: 6px;
-  background: #ffffff;
-  border-radius: 4px;
+    height: 133px;
+    padding-left: 6px;
+    padding-right: 6px;
+    background: #fff;
+    border-radius: 4px;
 }
+
 .game-page .card--shirt {
-  background: url(../assets/img/card-shirt.svg);
-  cursor: pointer;
+    background: url('../assets/img/card-shirt.svg');
+    cursor: pointer;
 }
+
 .game-page .card__face {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
 }
+
 .game-page .card .face__up {
-  align-self: start;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3px;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
 }
+
 .game-page .card .face__down {
-  align-self: end;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3px;
-  transform: rotate(180deg);
+    align-self: end;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    transform: rotate(180deg);
 }
+
 .game-page .card .face__rank {
-  font-size: 24px;
-  line-height: 32px;
-}/*# sourceMappingURL=styles.css.map */
+    font-size: 24px;
+    line-height: 32px;
+}
