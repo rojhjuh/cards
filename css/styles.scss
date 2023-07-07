@@ -60,3 +60,93 @@
         }
     }
 }
+
+.game-page {
+    padding: 22px 22px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+
+    .header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__timer {
+            width: 155px;
+            height: 91px;
+            display: flex;
+            flex-direction: column;
+        }
+        .timer {
+            &__names {
+                margin-bottom: -10px;
+                display: flex;
+                justify-content: end;
+                gap: 57px;
+            }
+
+            &__name {
+                font-size: 16px;
+                line-height: 32px;
+                color: #fff;
+                text-align: right;
+            }
+
+            &__digits {
+                font-size: 64px;
+                line-height: 72px;
+                color: #fff;
+            }
+        }
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(9, 95px);
+        gap: 15px;
+    }
+
+    .card {
+        height: 133px;
+        background: #ffffff;
+        border-radius: 4px;
+
+        &--shirt {
+            background: url(../assets/img/card-shirt.svg);
+            cursor: pointer;
+        }
+
+        &__face {
+            padding: 6px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .face {
+            &__up {
+                align-self: start;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 3px;
+            }
+
+            &__down {
+                align-self: end;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 3px;
+                transform: rotate(180deg);
+            }
+
+            &__rank {
+                font-size: 24px;
+                line-height: 32px;
+            }
+        }
+    }
+}
