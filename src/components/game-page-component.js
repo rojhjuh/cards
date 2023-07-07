@@ -1,7 +1,7 @@
 import { cards } from '../cards.js';
 
 export function renderGamePage({ gameElement }) {
-    let isOpenedCards = false;
+    let isOpenedCards = true;
 
     const notOpenedCardsHtml = cards
         .map(() => {
