@@ -1,5 +1,8 @@
 'use strict';
 
+import '../assets/fonts/stratosskyengweb-regular.woff2';
+import '../css/ui-kit.css';
+import '../css/styles.css';
 import { renderGamePage } from './components/game-page-component.js';
 import { renderStartPage } from './components/start-page-component.js';
 
