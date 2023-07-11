@@ -9,7 +9,7 @@ import { renderStartPage } from './components/start-page-component.js';
 const gameElement = document.querySelector('#game');
 
 let page = window.localStorage.getItem('page');
-let difficultyLevel = null;
+export let difficultyLevel = null;
 
 const renderGame = () => {
     if (!page) {
@@ -28,15 +28,7 @@ const renderGame = () => {
     }
 
     if (page === 'game-page') {
-        if (difficultyLevel === '1') {
-            window.localStorage.setItem('guessed-cards', '6');
-        } else if (difficultyLevel === '2') {
-            window.localStorage.setItem('guessed-cards', '9');
-        } else if (difficultyLevel === '3') {
-            window.localStorage.setItem('guessed-cards', '18');
-        }
-
-        renderGamePage({ gameElement });
+        renderGamePage({ gameElement, difficultyLevel });
 
         return;
     }
