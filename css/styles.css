@@ -116,7 +116,7 @@
 }
 
 .game-page .card--shirt {
-    background: url('../assets/img/card-shirt.svg');
+    background: url('../static/card-shirt.svg');
     cursor: pointer;
 }
 

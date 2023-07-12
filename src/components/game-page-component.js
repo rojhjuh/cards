@@ -1,35 +1,39 @@
 import { cards } from '../cards.js';
+import { difficultyLevel } from '../index.js';
 
 export function renderGamePage({ gameElement }) {
-    let isOpenedCards = true;
+    let cardsOpened = 0;
+    let previousCard;
 
-    const notOpenedCardsHtml = cards
-        .map(() => {
-            return `
-            <div class="card card--shirt"></div>`;
-        })
-        .join('');
+    cards.sort(() => Math.random() - 0.5);
+    cards.length = difficultyLevel * 6;
 
-    const openedCardsHtml = cards
-        .map((card) => {
-            return `
-            <div class="card">
-                <div class="card__face face">
-                    <div class="face__up">
-                        <span class="face__rank">${card.rank}</span>
-                        <img src="${card.suitCorner}">
-                    </div>
-                    <img src="${card.suitCenter}">
-                    <div class="face__down">
-                        <span class="face__rank">${card.rank}</span>
-                        <img src="${card.suitCorner}">
-                    </div>
-                </div>
+    const render = () => {
+        const cardsHtml = cards
+            .map((card) => {
+                return `
+            <div class="card ${card.isOpened ? '' : 'card--shirt'}">
+                ${
+                    card.isOpened
+                        ? `
+                    <div class="card__face face">
+                        <div class="face__up">
+                            <span class="face__rank">${card.rank}</span>
+                            <img src="${card.suitCorner}">
+                        </div>
+                        <img src="${card.suitCenter}">
+                        <div class="face__down">
+                            <span class="face__rank">${card.rank}</span>
+                            <img src="${card.suitCorner}">
+                        </div>
+                    </div>`
+                        : ''
+                }
             </div>`;
-        })
-        .join('');
+            })
+            .join('');
 
-    gameElement.innerHTML = `
+        gameElement.innerHTML = `
         <div class="modal game-page">
             <div class="header">
                 <div class="header__timer timer">
@@ -42,7 +46,37 @@ export function renderGamePage({ gameElement }) {
                 <button class="button" id="restart">Начать заново</button>
             </div>
             <div class="cards">
-                ${isOpenedCards ? openedCardsHtml : notOpenedCardsHtml}
+                ${cardsHtml}
             </div>
         </div>`;
+
+        [...document.querySelectorAll('.card')].forEach((card, index) => {
+            card.addEventListener('click', () => {
+                if (!cards[index].isOpened) {
+                    cards[index].isOpened = true;
+
+                    render();
+
+                    if (cardsOpened === 0) {
+                        previousCard = cards[index].rank;
+                        cardsOpened++;
+                    } else {
+                        alert(
+                            cards[index].rank === previousCard
+                                ? 'Вы выиграли'
+                                : 'Вы проиграли'
+                        );
+                    }
+                }
+            });
+        });
+    };
+
+    render();
+
+    setTimeout(() => {
+        cards.map((card) => (card.isOpened = false));
+
+        render();
+    }, 5000);
 }
