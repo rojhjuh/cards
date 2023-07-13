@@ -28,7 +28,7 @@ const renderGame = () => {
     }
 
     if (page === 'game-page') {
-        renderGamePage({ gameElement, difficultyLevel });
+        renderGamePage({ gameElement });
 
         return;
     }
